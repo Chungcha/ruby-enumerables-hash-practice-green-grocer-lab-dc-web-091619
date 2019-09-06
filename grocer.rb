@@ -50,7 +50,10 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
- consolidate_cart(cart)
- apply_coupons(consolidate_cart(cart), coupons)
- apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
+  consolidate_cart(cart).map do |keys,values|
+    total+=values[:price]
+  end
+  apply_coupons(consolidate_cart(cart), coupons)
+  apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
+  total
 end
