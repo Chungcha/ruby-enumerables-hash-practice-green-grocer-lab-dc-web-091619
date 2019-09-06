@@ -55,5 +55,6 @@ def checkout(cart, coupons)
   discounted_cart=apply_clearance(couponed_cart)
   total=discounted_cart.reduce({}) do |sum,(key,values)|
     sum+=values[:price]
+    sum
   end
 end
