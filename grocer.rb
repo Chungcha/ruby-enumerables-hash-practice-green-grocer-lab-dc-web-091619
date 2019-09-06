@@ -54,4 +54,8 @@ def checkout(cart, coupons)
     total+=value[:price]
   end
   total
+  apply_coupons(cart, coupons).map do |key,value|
+    total+=value[:price]
+  end
+  total
 end
