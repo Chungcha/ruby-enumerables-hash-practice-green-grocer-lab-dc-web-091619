@@ -53,7 +53,11 @@ def checkout(cart, coupons)
   total=0
   consolidate_cart(cart).map do |key,value|
     total+=value[:price]
-    if cou
+    if coupons
+      apply_coupons(cart, coupons).map do |key,value|
+        total+=value[:price]
+      end
+    end
   end
  total
 end
