@@ -55,7 +55,9 @@ def checkout(cart, coupons)
   hash_cart.map do |key,value|
     total+=value[:price]
   end
-  #coupon_kart=apply_coupons(hash_cart, coupons)
-  
+  coupon_cart=apply_coupons(hash_cart, coupons)
+  coupon_cart.map do |key,value|
+    total+=value[:price]
+  end
   total
 end
