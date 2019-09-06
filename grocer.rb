@@ -52,8 +52,10 @@ end
 def checkout(cart, coupons)
   total=0
   hash_cart=consolidate_cart(cart)
-  hash_cart.map do |key,value|
-    total+=value[:price]
-  end
-  total
+  #hash_cart.map do |key,value|
+    #total+=value[:price]
+  #end
+  #coupon_kart=apply_coupons(hash_cart, coupons)
+  
+  #total
 end
