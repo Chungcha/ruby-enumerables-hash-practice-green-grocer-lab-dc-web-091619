@@ -1,3 +1,4 @@
+require 'pry'
 
 def consolidate_cart(cart)
   final_hash={}
@@ -53,11 +54,6 @@ def checkout(cart, coupons)
   total=0
   consolidate_cart(cart).map do |key,value|
     total+=value[:price]
-  end
-  if coupons==0
-    apply_coupons(cart, coupons).map do |key,value|
-      total+=value[:price]
-    end
   end
   total
 end
