@@ -57,4 +57,5 @@ def checkout(cart, coupons)
     sum+=values[:price]
     sum
   end
+  total
 end
